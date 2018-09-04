@@ -32,6 +32,6 @@ dataMelted <- reshape2::melt(extractedData, id = c("Subject", "Activity"))
 dataTidy <- reshape2::dcast(dataMelted, Subject + Activity ~ variable, mean)
 write.table(dataTidy, "data_tidy.txt", row.names = FALSE, quote = FALSE)
 
-rm(dataMelted, dataTidy)
+rm(dataMelted, dataTidy, extractedData)
 
 # EOF
